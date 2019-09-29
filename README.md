@@ -1,19 +1,23 @@
-# xapi - Easy Express API
-[![Build Status](https://travis-ci.org/andela-git/senplate.svg?branch=master)](https://travis-ci.org/andela-git/senplate)
-[![CircleCI](https://circleci.com/gh/andela-git/senplate.svg?style=svg)](https://circleci.com/gh/andela-git/senplate)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a37bd58403dc31ebe22e/maintainability)](https://codeclimate.com/github/andela-git/senplate/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/a37bd58403dc31ebe22e/test_coverage)](https://codeclimate.com/github/andela-git/senplate/test_coverage)
-[![Coverage Status](https://coveralls.io/repos/github/andela-git/senplate/badge.svg?branch=master)](https://coveralls.io/github/andela-git/senplate?branch=master)
+# Lepsta Developer code session - Development to Production 
+[![Build Status](https://travis-ci.org/waleCloud/lepsta.svg?branch=staging)](https://travis-ci.org/waleCloud/lepsta)
 
-A quick start template for bootstrapping a new NODE Express API application using sequelize as the ORM.
+A minimal api developed for the lepsta developer session on Saturday 28th of September 2019, titled `from development to production`.
+* [Presentation slides here](https://docs.google.com/presentation/d/1FU0f-3Xd-4NgblomPzHeU3tk7d3dOhqbgSvDdbBs_rs/edit?usp=sharing)
+
+* [Docker Image](https://hub.docker.com/r/walecloud/lepsta/builds)
 
 ## Quick setup
-* `git clone https://github.com/waleCloud/xapi.git`
-* `cd xapi`
+* `git clone https://github.com/waleCloud/lepsta`
+* `cd lepsta`
 * `cp .env.example .env` - Listens on PORT 9000 by default.
 * `npm install`
 * `npm test` - To run tests
 * `npm start` - Your app should be running on http://localhost:9000/
+
+## Docker build local
+* `docker build -f Dockerfile -t lepsta:staging`.
+* `docker run -p 9000:9000 lepsta/staging`
+*  Your app should be running on http://localhost:9000/
 
 ### Folder structure
 - **app** [dir] - application folder
@@ -47,12 +51,3 @@ Parse incoming request bodies in a middleware before your handlers, available un
 
 ### Licence
 *     MIT
-
-#### TODO
-The project needs to be built into a CLI to npm tool such that with just one command, an install can be made.
-something like;
-* `npm install -g xapi`
-* `xa create <app name>`
-* `cd <app name>`
-* `xa do controller User`
-* `xa do model:migration User`
