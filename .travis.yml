@@ -9,7 +9,7 @@ before_install:
   # install heroku CLI 
   - wget -qO- https://toolbelt.heroku.com/install.sh | sh 
   # login to docker registries (dockerhub + heroku)
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
   - echo "$HEROKU_PASSWORD" | docker login --username="$HEROKU_USERNAME" --password=$(heroku auth:token) registry.heroku.com
 script:
   - npm install
